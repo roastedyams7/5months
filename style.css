@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff4d6d;
+    color: white;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-200px) rotate(180deg);}
+    100% { transform: translateY(0) rotate(360deg);}
+}
+
+.candle-bg {
+    background: radial-gradient(circle at center, #000 0%, #111 100%);
+}
+
+.candle-light {
+    width: 100px;
+    height: 150px;
+    background: radial-gradient(circle, #ffddaa, #ff8800);
+    margin: 100px auto;
+    border-radius: 50% 50% 0 0;
+    animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+/* Rings container */
+.rings {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    opacity: 0;
+    transition: opacity 1s ease 1s;
+}
+
+.rings.show {
+    opacity: 1;
+}
+
+/* Gold wedding rings */
+.ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #FFD700, #DAA520); /* gold band */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Gemstone on top */
+.gem {
+    width: 18px;
+    height: 12px;
+    border-radius: 50%; /* oval cut */
+    position: absolute;
+    top: -8px; /* position above the band */
+    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Ruby gem */
+.gem.ruby {
+    background: radial-gradient(circle at 30% 30%, #d2042d, #800000);
+}
+
+/* Emerald gem */
+.gem.emerald {
+    background: radial-gradient(circle at 30% 30%, #228B22, #006400);
+}
