@@ -71,25 +71,52 @@
         .next-button:hover {
             background-color: #ff2a4d;
         }
+
+        #playSong {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            background-color: #4da6ff;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        #playSong:hover {
+            background-color: #1a8cff;
+        }
     </style>
 </head>
 <body>
-<iframe 
-    style="border-radius:12px; width:100%; height:352px;" 
-    src="https://open.spotify.com/embed/track/3DbZqVaXg8Yi1VBU44i0ns?utm_source=generator&theme=0" 
-    frameborder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-    loading="lazy">
-</iframe>
+    <h1>💌 My Apology</h1>
 
+    <button id="playSong">Click Here 🎵</button>
+    <audio id="song">
+      <source src="ocean-floor.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
-I’m truly sorry for making you cry and for ever making you feel like you can’t be completely yourself around me. 
-The last thing I would ever want is for you to feel restricted or hurt in any way because of me.
-You are so special to me, and everything about you is beautiful to me. The way you care, the way you think, the way you express yourself, the way you love and everything in between.
-I love you for who you are, not for who I wish you were, and I want you to always feel safe and free to be your true self with me. 
-Just know that your happiness matters more to me than anything, and I will do everything I can to make sure you feel loved, understood, and appreciated every single day.
+    <p>
+        I’m truly sorry for making you cry and for ever making you feel like you can’t be completely yourself around me. 
+        The last thing I would ever want is for you to feel restricted or hurt in any way because of me. 
+        You are so special to me, and everything about you is beautiful to me. The way you care, the way you think, the way you express yourself, the way you love, and everything in between. 
+        I love you for who you are, not for who I wish you were, and I want you to always feel safe and free to be your true self with me. 
+        Just know that your happiness matters more to me than anything, and I will do everything I can to make sure you feel loved, understood, and appreciated every single day.
     </p>
 
-    <a href="proposal.html" class="next-button">Next</a>
+    <a href="proposal.html" class="next-button">Next 💍</a>
+
+    <script>
+        const button = document.getElementById("playSong");
+        const song = document.getElementById("song");
+
+        button.addEventListener("click", () => {
+            song.play().catch(error => {
+                alert("Cannot play audio. Make sure the file is in the same folder and your browser supports HTML5 audio.");
+            });
+        });
+    </script>
 </body>
 </html>
